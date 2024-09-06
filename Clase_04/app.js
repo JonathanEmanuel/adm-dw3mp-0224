@@ -4,7 +4,7 @@ const app = Vue.createApp({
             tasks: [],
             task: '',
             filtro: '',
-            status: 1,
+            status: 0,
         }
     },
     created(){
@@ -13,7 +13,12 @@ const app = Vue.createApp({
     },
     computed:{
         filtradas(){
-            const list = this.tasks.filter( task => task.name.toLowerCase().includes( this.filtro.toLowerCase() ));
+
+            const list = this.tasks.filter( 
+                task => ( task.name.toLowerCase().includes( this.filtro.toLowerCase() ) 
+                            &&  task.completed == this.status
+                )
+            );
             console.log(list);
             return list;
         },

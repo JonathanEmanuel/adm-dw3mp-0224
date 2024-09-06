@@ -17,9 +17,9 @@
                 <input v-model="filtro" type="search" class="form-control" placeholder="buscar...">
             </div>
             <div class="col">
-                <select class="form-control">
-                    <option value="1">Pendientes</option>
-                    <option value="2">Finalizadas</option>
+                <select v-model.number="status" class="form-control">
+                    <option value="0">Pendientes</option>
+                    <option value="1">Finalizadas</option>
 
                 </select>
             </div>
