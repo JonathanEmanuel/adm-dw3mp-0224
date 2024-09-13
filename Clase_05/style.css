@@ -15,3 +15,12 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.like {
+    cursor: pointer;
+    transition: all linear 0.5s;
+}
+
+.like:active {
+    transform: scale(1.2);
+}

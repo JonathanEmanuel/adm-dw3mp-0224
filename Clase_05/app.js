@@ -9,7 +9,12 @@ const app = Vue.createApp({
     },
     created(){
         console.log('Creación de la instancia');
-        this.getTask();
+        const local = this.readStorage()
+        if(  local.length > 0  ){
+            this.tasks = local;
+        } else {
+            this.getTask();
+        }
     },
     computed:{
         filtradas(){
@@ -50,33 +55,19 @@ const app = Vue.createApp({
                 console.error( error)
             }
         },
-/*         getTask(){
-            fetch('data/tasks.json')
-            .then( res => res.json())
-            .then( json => {
-                console.log(json);
-                this.tasks = json;
-            }).catch( error => {
-                console.error(error)
-            })
-        }, */
-        // Agrega una tarea el array
         add(){
             console.log('Nueva tarea');
             const id = this.tasks.length + 1;
             this.tasks.push({
                 id: id,
                 name: this.task,
-                computed: false
+                completed: false
             })
 
-
+            this.saveStorage();
             Toastify({
-
                 text: "Tarea Guardada",
-                
                 duration: 3000
-                
                 }).showToast();
         },
         remove(task){
@@ -94,14 +85,21 @@ const app = Vue.createApp({
                 if (result.isConfirmed) {
                     const index = this.tasks.findIndex( item => item.id == task.id );
                     this.tasks.splice(index, 1);
+                    this.saveStorage();
                 }
             });
-
-
-
         },
         update(task){
             task.completed = !task.completed;
+            this.saveStorage();
+        },
+        saveStorage(){
+            const stringData  = JSON.stringify(this.tasks);
+            localStorage.setItem('tasks',stringData);
+        },
+        readStorage(){
+            const data = JSON.parse( localStorage.getItem('tasks') );
+            return data ? data : [];
         }
 
     }

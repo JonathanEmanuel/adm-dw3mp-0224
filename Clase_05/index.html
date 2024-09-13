@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/png">
 </head>
 <body>
     <header class="bg-success text-white">
@@ -16,7 +17,7 @@
     <main id="app" class="container">
         <div class="row p-4">
             <div class="col">
-                <input v-model="filtro" type="search" class="form-control" placeholder="buscar...">
+                <input v-model="filtro" type="search" class="form-control" placeholder="Buscar...">
             </div>
             <div class="col">
                 <select v-model.number="status" class="form-control">
@@ -61,9 +62,26 @@
                 </ul>
             </div>
             <div class="col">
-                <pre>
-                    {{ filtradas }}
-                </pre>
+                <div class="row">
+                    <div class="col">
+                        <div class="card p-2">
+                            <img class="img-fluid" src="images/calendario.png" alt="calendario">
+                            <hr>
+                            <span><i class="fa-regular fa-thumbs-up like"></i> 2</span>
+                            <button type="button" class="btn btn-primary"> Guardar</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card p-2">
+                            <img class="img-fluid" src="images/trabajo.png" alt="trabajo">
+                            <hr>
+                            <span><i class="fa-regular fa-thumbs-up like"></i> 2</span>
+                            <button type="button" class="btn btn-primary"> Guardar</button>
+
+                        </div>
+                    </div>
+                </div>
+   
             </div>
 
         </div>
