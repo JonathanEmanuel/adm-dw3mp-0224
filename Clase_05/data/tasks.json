@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Hacer Ejercicios",
+        "completed": false
+    },
+    {
+        "id": 2,
+        "name": "Salir a Correr",
+        "completed": false
+    },
+    {
+        "id": 3,
+        "name": "Estudiar VueJS",
+        "completed": true
+    },
+    {
+        "id": 4,
+        "name": "Estudiar PHP",
+        "completed": true
+    },
+    {
+        "id": 5,
+        "name": "Estudiar Arte",
+        "completed": true
+    }
+]
