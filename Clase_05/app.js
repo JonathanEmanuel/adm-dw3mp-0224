@@ -105,4 +105,47 @@ const app = Vue.createApp({
     }
 })
 
+app.component('card', {
+    data(){
+        return{
+            likes: 10
+        }
+    },
+    props: ['foto', 'descripcion'],
+    template: // html
+        `<div class="card p-2">
+            <img class="img-fluid" v-bind:src="foto" alt="calendario">
+            <p> {{ descripcion }} </p>
+            <hr>
+            <span><i v-on:click="darLike"  class="fa-regular fa-lg fa-thumbs-up like"></i> {{ likes }}</span>
+            <button type="button" class="btn btn-primary"> Guardar</button>
+        </div>`,
+    methods:{
+        darLike(){
+            this.likes++
+        }
+    }
+})
+
+app.component('tarea', {
+    props:[ 'task'],
+    template: // html
+        `<li class="list-group-item d-flex justify-content-between">
+        <span>
+            <i v-if="task.completed" class="fa-solid fa-circle-check fa-lg text-success"></i>
+            <i v-else class="fa-solid fa-clock  fa-lg text-primary"></i>
+            {{ task.name  }}
+        </span>
+        <span class="d-flex  gap-2">
+            <button v-on:click="update(task)" class="btn btn-primary" type="button">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+            </button>
+            <button v-on:click="remove(task)" class="btn btn-danger" type="button">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </span>
+    </li>`
+})
+
 app.mount('#app')

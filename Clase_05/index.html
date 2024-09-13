@@ -42,6 +42,7 @@
         <div class="row">
             <div class="col">
                 <ul class="list-group">
+                   <!--  <tarea v-for="task in filtradas" v-bind:task="task" ></tarea> -->
                     <li v-for="task in filtradas" class="list-group-item d-flex justify-content-between">
                         <span>
                             <i v-if="task.completed" class="fa-solid fa-circle-check fa-lg text-success"></i>
@@ -55,30 +56,26 @@
                             </button>
                             <button v-on:click="remove(task)" class="btn btn-danger" type="button">
                                 <i class="fa-solid fa-trash"></i>
-
                             </button>
                         </span>
                     </li>
                 </ul>
             </div>
             <div class="col">
+                
                 <div class="row">
                     <div class="col">
-                        <div class="card p-2">
-                            <img class="img-fluid" src="images/calendario.png" alt="calendario">
-                            <hr>
-                            <span><i class="fa-regular fa-thumbs-up like"></i> 2</span>
-                            <button type="button" class="btn btn-primary"> Guardar</button>
-                        </div>
+                        <card 
+                            descripcion="Hola!"
+                            foto="images/calendario.png"
+                        ></card>
+     
                     </div>
                     <div class="col">
-                        <div class="card p-2">
-                            <img class="img-fluid" src="images/trabajo.png" alt="trabajo">
-                            <hr>
-                            <span><i class="fa-regular fa-thumbs-up like"></i> 2</span>
-                            <button type="button" class="btn btn-primary"> Guardar</button>
-
-                        </div>
+                        <card 
+                            descripcion="Otro texto pasado por medio de una propiedad"
+                            foto="images/trabajo.png"
+                        ></card>    
                     </div>
                 </div>
    
