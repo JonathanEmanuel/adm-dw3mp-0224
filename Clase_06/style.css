@@ -1,0 +1,26 @@
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    min-height: 70vh;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like {
+    cursor: pointer;
+    transition: all linear 0.5s;
+}
+
+.like:active {
+    transform: scale(1.2);
+}
