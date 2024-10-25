@@ -8,6 +8,10 @@ import {
   BIconBatteryFull, 
   BIconArchive, 
   BIconLamp} from "bootstrap-icons-vue";
+
+
+
+
 </script>
 
 <template>
